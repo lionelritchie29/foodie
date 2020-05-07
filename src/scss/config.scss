@@ -1,0 +1,42 @@
+/////// VARIABLES
+
+$primary-dark-green: #028174;
+$primary-mid-green: #0ab68b;
+$primary-light-green: #92de8b;
+$secondary-light: #ffe3b3;
+$secondary-dark: #846f75;
+
+$screen-sm: 576px;
+$screen-md: 768px;
+$screen-lg: 992px;
+$screen-xl: 1200px;
+
+/////// MEDIA QUERIES
+
+// Small devices
+@mixin sm {
+  @media (min-width : #{$screen-sm}) {
+    @content;
+  }
+}
+
+//Medium devices
+@mixin md {
+  @media (min-width: #{$screen-md}) {
+    @content;
+  }
+}
+
+// Large devices
+@mixin lg {
+  @media (min-width: #{$screen-lg}) {
+    @content;
+  }
+}
+
+// Extra large devices
+@mixin xl {
+  @media (min-width: #{$screen-xl}) {
+    @content;
+  }
+}

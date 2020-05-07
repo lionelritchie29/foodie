@@ -1,0 +1,39 @@
+@import "./main.scss";
+// 89.52deg,
+
+#main-section {
+  height: 100vh;
+  background-image: linear-gradient(
+      to bottom,
+      rgba(2, 129, 116, 0.8),
+      rgba(10, 182, 139, 0.5)
+    ),
+    url("https://i.ibb.co/b2dkztz/main-header.jpghttps://i.ibb.co/b2dkztz/main-header.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  object-fit: cover;
+
+  // LEFT SIDE
+  h1 {
+    color: $secondary-light;
+    font-weight: 600;
+  }
+
+  button {
+    border-radius: 7px;
+    font-weight: 600;
+  }
+
+  button:nth-child(1) {
+    background-color: $secondary-light;
+    color: $secondary-dark;
+  }
+
+  button:nth-child(2) {
+    border: 2px $secondary-light solid;
+    color: $secondary-light;
+  }
+
+  // RIGHT SIDE
+}
