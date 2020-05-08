@@ -10,12 +10,16 @@ class ShowcaseItem extends HTMLElement {
     this.shadowRoot.appendChild(template.content.cloneNode(true));
   }
 
-  set showcaseItem(item) {
-    this._showcaseItem = item;
+  set item(item) {
+    this._item = item;
     this.render();
   }
 
-  render() {}
+  render() {
+    console.log(this._item.title);
+    console.log(this.shadowRoot.querySelector("div"));
+    // this.shadowRoot.querySelector("h5").innerHTML = this._item.title;
+  }
 }
 
 customElements.define("showcase-item", ShowcaseItem);

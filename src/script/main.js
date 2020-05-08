@@ -17,7 +17,7 @@ function main() {
 
   // Function to call showcase-list component settter
   const passInitialResponse = (showcaseItems) => {
-    showcaseListElement.showcaseItems = showcaseItems;
+    showcaseListElement.items = showcaseItems;
   };
 }
 
