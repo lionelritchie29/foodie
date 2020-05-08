@@ -1,3 +1,37 @@
 div {
-  background-color: red;
+  background-color: white;
+  border-radius: 0.25rem;
+  div {
+    width: 90%;
+    margin: 0 auto;
+    padding: 1rem 0;
+    img {
+      width: 100%;
+      height: auto;
+    }
+
+    h5,
+    p {
+      margin: 0;
+      text-align: left;
+    }
+
+    h5 {
+      text-decoration: underline;
+    }
+
+    p {
+      font-size: 0.8rem;
+    }
+
+    button {
+      width: 100%;
+      border: none;
+      background: $primary-mid-green;
+      padding: 0.5rem 0;
+      margin-top: 0.3rem;
+      color: white;
+      border-radius: 0.2rem;
+    }
+  }
 }
