@@ -2,7 +2,7 @@
 // 89.52deg,
 
 #main-section {
-  height: 100vh;
+  height: 100%;
   background-image: linear-gradient(
       to bottom,
       rgba(2, 129, 116, 0.8),
@@ -15,6 +15,10 @@
   object-fit: cover;
 
   // LEFT SIDE
+  .pt-10 {
+    padding-top: ($spacer * 5);
+  }
+
   h1 {
     color: $secondary-light;
     font-weight: 600;
@@ -36,4 +40,9 @@
   }
 
   // RIGHT SIDE
+
+  // MEDIA QUERY
+  @include md {
+    height: 100vh;
+  }
 }

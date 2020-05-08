@@ -1,5 +1,6 @@
 // import "./scss/main.scss";
 import "./scss/main-section.scss";
+import "./scss/showcase.scss";
 
 // Components
 import "./components/main-card/main-card.js";

@@ -1,0 +1,20 @@
+@import "./main.scss";
+
+#showcase {
+  background-color: $primary-dark-green;
+  text-align: center;
+
+  h1 {
+    font-weight: 600;
+    font-size: 2rem;
+    color: $secondary-light;
+  }
+
+  showcase-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    width: 90%;
+    margin: 0 auto;
+  }
+}

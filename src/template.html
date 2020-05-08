@@ -56,13 +56,13 @@
             <div
               class="col-12 col-md-6 d-flex justify-content-center align-items-center"
             >
-              <div>
+              <div class="pt-10 pt-lg-0">
                 <h1 class="text-center text-md-left mb-5">
                   HI, THERE! <br />
                   WELCOME TO FOODIE!
                 </h1>
                 <div class="d-flex justify-content-around d-lg-block w-100">
-                  <button class="btn px-4 px-md-5 py-3 mr-md-5">
+                  <button class="btn px-4 px-md-5 py-3 mr-md-4">
                     Contact Us
                   </button>
                   <button class="btn px-4 px-md-5 py-3">
@@ -73,19 +73,36 @@
             </div>
 
             <!-- Main Card -->
-            <div class="col-12 col-md-6">
-              <div class="row">
-                <main-card name="Recipes" class="col"></main-card>
-                <main-card name="Grocery Product" class="col"></main-card>
+            <div
+              class="col-12 col-md-6 d-flex justify-content-center align-items-center"
+            >
+              <div class="row px-3 px-md-4 px-lg-5 pb-4 pb-md-0">
+                <main-card name="Recipes" src="recipe" class="col"></main-card>
+                <main-card
+                  name="Grocery Product"
+                  src="grocery"
+                  class="col"
+                ></main-card>
                 <div class="w-100"></div>
-                <main-card name="Menu" class="col"></main-card>
-                <main-card name="Meal Generator" class="col"></main-card>
+                <main-card name="Menu" src="menu" class="col"></main-card>
+                <main-card
+                  name="Meal Generator"
+                  src="meal"
+                  class="col"
+                ></main-card>
               </div>
             </div>
           </div>
         </div>
       </section>
       <!-- End of Main Section -->
+
+      <!-- Showcase Recipe Section -->
+      <section id="showcase" class="py-5">
+        <h1>Recipes of the Day</h1>
+        <showcase-list></showcase-list>
+      </section>
+      <!-- End of Showcase Recipe Secction -->
     </main>
     <!-- End of Body -->
   </body>
