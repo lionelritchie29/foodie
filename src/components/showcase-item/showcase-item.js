@@ -1,13 +1,17 @@
 import html from "./template.html";
 import scss from "./style.scss";
 import templateFactory from "../../utils/templateFactory.js";
+import truncate from "../../utils/truncateString.js";
 
 const template = templateFactory(html, scss);
+const baseRecipeImageUrl = "https://spoonacular.com/recipeImages";
+const baseSize = "240x150";
 
 class ShowcaseItem extends HTMLElement {
-  connectedCallback() {
-    this.attachShadow({ mode: "open" });
-    this.shadowRoot.appendChild(template.content.cloneNode(true));
+  constructor() {
+    super();
+    this.shadowDOM = this.attachShadow({ mode: "open" });
+    this.shadowDOM.appendChild(template.content.cloneNode(true));
   }
 
   set item(item) {
@@ -16,9 +20,15 @@ class ShowcaseItem extends HTMLElement {
   }
 
   render() {
-    console.log(this._item.title);
-    console.log(this.shadowRoot.querySelector("div"));
-    // this.shadowRoot.querySelector("h5").innerHTML = this._item.title;
+    const titleSliced = truncate(this._item.title);
+    this.shadowDOM.querySelector("h5").innerText = titleSliced;
+    this.shadowDOM.querySelector(
+      "#ready-in-minute"
+    ).innerText = this._item.readyInMinutes;
+    this.shadowDOM.querySelector("#serving").innerText = this._item.servings;
+    this.shadowDOM.querySelector(
+      "img"
+    ).src = `${baseRecipeImageUrl}/${this._item.id}-${baseSize}.${this._item.imageType}`;
   }
 }
 
