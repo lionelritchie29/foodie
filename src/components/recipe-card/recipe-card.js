@@ -19,6 +19,11 @@ class RecipeCard extends HTMLElement {
     this.render();
   }
 
+  get recipeItem() {
+    // return this._item;
+    return 2;
+  }
+
   render() {
     const titleSliced = truncate(this._item.title);
     this.shadowDOM.querySelector("h5").innerText = titleSliced;

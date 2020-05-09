@@ -10,6 +10,10 @@ class SearchRecipeList extends HTMLElement {
     this.render();
   }
 
+  // get recipeData(recipeItem) {
+  // return recipeItem;
+  // }
+
   render() {
     this.shadowDOM.innerHTML = "";
     console.log(this._items);

@@ -6,6 +6,8 @@ import "../components/meal-list/meal-list.js";
 import getRandomRecipe from "./functions/random-recipe.js";
 import getSearchedRecipe from "./functions/search-recipe.js";
 import getMeal from "./functions/meal-generator.js";
+import generateJoke from "./functions/joke-generator.js";
+import generateTrivia from "./functions/trivia-generator.js";
 
 function main() {
   const searchRecipeBtn = document.querySelector("#search-recipe-btn");
@@ -27,6 +29,10 @@ function main() {
 
   // If user click generate meal button
   generateMealBtn.addEventListener("click", () => getMeal(apiData));
+
+  // console.log(document.querySelector("showcase-list").recipeData);
+  // generateJoke(apiData);
+  // generateTrivia(apiData);
 }
 
 export default main;

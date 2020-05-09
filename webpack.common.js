@@ -1,5 +1,4 @@
 const path = require("path");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
   entry: {
@@ -24,33 +23,21 @@ module.exports = {
         ],
       },
       {
-        test: /\.scss$/,
-        exclude: /components/,
-        use: [
-          "style-loader",
-          "css-loader",
-          "sass-loader",
-          {
-            loader: "sass-resources-loader",
-            options: {
-              resources: "./src/scss/config.scss",
-            },
-          },
-        ],
-      },
-      {
         test: /\.html$/,
         use: ["html-loader"],
       },
       {
         test: /\.(svg|png|jpg|gif)$/,
-        use: {
-          loader: "file-loader",
-          options: {
-            name: "[name].[hash].[ext]",
-            outputPath: "assets/images",
+        use: [
+          {
+            loader: "file-loader",
+            options: {
+              name: "[name].[hash].[ext]",
+              outputPath: "assets/images",
+            },
           },
-        },
+          "img-loader",
+        ],
       },
       {
         test: /\.(woff(2)?|ttf|eot)(\?v=\d+\.\d+\.\d+)?$/,
@@ -64,10 +51,4 @@ module.exports = {
       },
     ],
   },
-  plugins: [
-    new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, "src/template.html"),
-      filename: "index.html",
-    }),
-  ],
 };
