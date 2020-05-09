@@ -3,50 +3,44 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Foodie</title>
   </head>
   <body>
     <!-- Header -->
     <header>
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark-gray">
-        <a class="navbar-brand" href="#"
-          ><img
-            src="./assets/images/chef.png"
-            width="20"
-            height="20"
-            class="d-inline-block align-middle mr-1"
-            alt="logo"
-          />Foodie</a
-        >
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
+      <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+          <a class="navbar-brand" href="#"
+            ><i class="fas fa-glass-cheers"></i> Foodie
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="#"
-                >Home <span class="sr-only">(current)</span></a
-              >
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Recipes</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Meal Generator</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Food Jokes & Trivia</a>
-            </li>
-          </ul>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="#main-section">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#showcase">Recipes</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#meal-generator">Meal Generator</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#trivia">Food Jokes & Trivia</a>
+              </li>
+            </ul>
+          </div>
         </div>
       </nav>
     </header>
@@ -68,9 +62,11 @@
                   WELCOME TO FOODIE!
                 </h1>
                 <div class="d-flex justify-content-around d-lg-block w-100">
-                  <button class="btn px-4 px-md-5 py-3 mr-md-4">
-                    Contact Us
-                  </button>
+                  <a href="#newsletter"
+                    ><button class="btn px-4 px-md-5 py-3 mr-md-4">
+                      Subscribe
+                    </button></a
+                  >
                   <button class="btn px-4 px-md-5 py-3">
                     Get Joke
                   </button>
@@ -105,7 +101,11 @@
 
       <!-- Showcase Recipe Section -->
       <section id="showcase" class="py-5">
-        <h1>Some Recipes for You</h1>
+        <h1>
+          <i class="fas fa-cheese"></i>
+          Special Hand-picked Recipe
+          <i class="fas fa-bread-slice"></i>
+        </h1>
         <showcase-list></showcase-list>
         <div class="search-recipe mx-auto mt-5">
           <h5>
@@ -134,24 +134,169 @@
       <!-- Meal Generator Section -->
       <section id="meal-generator" class="py-5">
         <div class="container">
-          <h1>Meal Plan Generator</h1>
+          <h1>
+            <i class="fas fa-hotdog"></i> Meal Plan Generator
+            <i class="fas fa-hamburger"></i>
+          </h1>
           <p>
             Check out our free meal plan generator, click the button bellow to
             generate your meal plan for tomorrow.
           </p>
-          <button>Generate My Meal</button>
+          <button id="meal-btn">Generate My Meal</button>
           <meal-list></meal-list>
           <div class="d-flex justify-content-around mt-5">
-            <span>Calorie</span>
-            <span>Carbohydrates</span>
-            <span>Flat</span>
-            <span>Protein</span>
+            <div class="nutrient">
+              <span class="text-white">Calorie</span> <br />
+              <span id="calories"></span> cal
+            </div>
+            <div class="nutrient">
+              <span class="text-white">Carbohydrates</span> <br />
+              <span id="carbo"></span> gr
+            </div>
+            <div class="nutrient">
+              <span class="text-white">Fat</span> <br />
+              <span id="fat"></span> gr
+            </div>
+            <div class="nutrient">
+              <span class="text-white">Protein</span> <br />
+              <span id="protein"></span> gr
+            </div>
           </div>
         </div>
       </section>
       <!-- End of Meal Generator Section -->
     </main>
     <!-- End of Body -->
+
+    <!-- Trivia and Joke section -->
+    <section id="trivia" class="py-5">
+      <div class="container">
+        <h1 class="text-center">Trivia and Joke</h1>
+        <div class="row">
+          <div class="col-12 col-md-6 mt-3">
+            <div class="card mx-auto h-100 shadow-lg">
+              <div class="card-header text-center">
+                Food Trivia <i class="fas fa-utensils"></i>
+              </div>
+              <div class="card-body">
+                <div class="d-flex justify-content-center">
+                  <img
+                    src="./assets/images/food-trivia.svg"
+                    alt=""
+                    height="200"
+                    class="mx-auto card-title"
+                  />
+                </div>
+                <h5 class="card-title">Did you know that...</h5>
+                <p class="card-text">
+                  The red food-coloring carmine used in Skittles and other
+                  candies is made from boiled cochineal bugs, a type of beetle.
+                </p>
+                <button class="btn">I want more</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-6 mt-3">
+            <div class="card h-100 mx-auto shadow-lg">
+              <div class="card-header text-center">
+                Food Joke <i class="fas fa-smile-wink"></i>
+              </div>
+              <div class="card-body">
+                <div class="d-flex justify-content-center">
+                  <img
+                    src="./assets/images/food-joke.svg"
+                    alt=""
+                    height="200"
+                    class="mx-auto"
+                  />
+                </div>
+                <h5 class="card-title">Did you know that..</h5>
+                <p class="card-text">
+                  Any salad can be a Caesar salad if you stab it enough.
+                </p>
+                <button class="btn">I want more</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End of Trivia and Joke Section -->
+
+    <!-- newsletter Section -->
+    <section class="newsletter" id="newsletter">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="content">
+              <h2>SUBSCRIBE TO OUR NEWSLETTER</h2>
+              <div class="input-group">
+                <input
+                  type="email"
+                  class="form-control"
+                  placeholder="Enter your email"
+                />
+                <span class="input-group-btn">
+                  <button class="btn" type="submit">Subscribe Now</button>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End of Newsletter Section -->
+
+    <!-- Modal -->
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="exampleModalCenter"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="exampleModalCenterTitle"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            ...
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+            >
+              Close
+            </button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--  -->
+
+    <button
+      type="button"
+      class="btn btn-primary"
+      data-toggle="modal"
+      data-target="#exampleModalCenter"
+    >
+      Launch demo modal
+    </button>
 
     <!-- Footer -->
     <footer>

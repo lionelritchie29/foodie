@@ -2,6 +2,8 @@
 import "./scss/main-section.scss";
 import "./scss/showcase-section.scss";
 import "./scss/meal-generator-section.scss";
+import "./scss/trivia-section.scss";
+import "./scss/newsletter-section.scss";
 import "./scss/footer-section.scss";
 
 // Components

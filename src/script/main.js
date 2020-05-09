@@ -1,12 +1,15 @@
+// Components
 import "../components/showcase-list/showcase-list.js";
 import "../components/search-recipe-list/search-recipe-list.js";
 import "../components/meal-list/meal-list.js";
+
 import getRandomRecipe from "./functions/random-recipe.js";
-import axios from "axios";
 import getSearchedRecipe from "./functions/search-recipe.js";
+import getMeal from "./functions/meal-generator.js";
 
 function main() {
   const searchRecipeBtn = document.querySelector("#search-recipe-btn");
+  const generateMealBtn = document.querySelector("#meal-btn");
 
   const apiData = {
     apiKey: "8c45e5cc1bd3429e889d99bb19382990",
@@ -14,13 +17,16 @@ function main() {
   };
 
   // Get random recipe to show at showcase
-  getRandomRecipe(apiData);
+  // getRandomRecipe(apiData);
 
   // If user searched for specific recipe
   searchRecipeBtn.addEventListener("click", () => getSearchedRecipe(apiData));
 
-  const arr = [1, 2, 3];
-  document.querySelector("meal-list").items = arr;
+  // Init meal list
+  // getMeal(apiData);
+
+  // If user click generate meal button
+  generateMealBtn.addEventListener("click", () => getMeal(apiData));
 }
 
 export default main;
