@@ -1,7 +1,8 @@
 //Sass
 import "./scss/main-section.scss";
-import "./scss/showcase.scss";
-import "./scss/footer.scss";
+import "./scss/showcase-section.scss";
+import "./scss/meal-generator-section.scss";
+import "./scss/footer-section.scss";
 
 // Components
 import "./components/main-card/main-card.js";

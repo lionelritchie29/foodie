@@ -1,29 +1,26 @@
-const axios = require("axios");
 import "../components/showcase-list/showcase-list.js";
+import "../components/search-recipe-list/search-recipe-list.js";
+import "../components/meal-list/meal-list.js";
+import getRandomRecipe from "./functions/random-recipe.js";
+import axios from "axios";
+import getSearchedRecipe from "./functions/search-recipe.js";
 
 function main() {
+  const searchRecipeBtn = document.querySelector("#search-recipe-btn");
+
   const apiData = {
     apiKey: "8c45e5cc1bd3429e889d99bb19382990",
     baseUrl: "https://api.spoonacular.com",
   };
 
-  const showcaseListElement = document.querySelector("showcase-list");
+  // Get random recipe to show at showcase
+  getRandomRecipe(apiData);
 
-  // Sending GET request to API, result : array of show case recipes
-  // to be used in showcase section
-  (function () {
-    axios
-      .get(
-        `${apiData.baseUrl}/recipes/random?apiKey=${apiData.apiKey}&number=8`
-      )
-      .then((response) => passInitialResponse(response.data.recipes))
-      .catch((error) => console.log(error));
-  })();
+  // If user searched for specific recipe
+  searchRecipeBtn.addEventListener("click", () => getSearchedRecipe(apiData));
 
-  // Function to call showcase-list component settter
-  const passInitialResponse = (showcaseItems) => {
-    showcaseListElement.items = showcaseItems;
-  };
+  const arr = [1, 2, 3];
+  document.querySelector("meal-list").items = arr;
 }
 
 export default main;

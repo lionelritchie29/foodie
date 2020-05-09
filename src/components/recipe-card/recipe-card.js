@@ -7,7 +7,7 @@ const template = templateFactory(html, scss);
 const baseRecipeImageUrl = "https://spoonacular.com/recipeImages";
 const baseSize = "240x150";
 
-class ShowcaseItem extends HTMLElement {
+class RecipeCard extends HTMLElement {
   constructor() {
     super();
     this.shadowDOM = this.attachShadow({ mode: "open" });
@@ -28,8 +28,8 @@ class ShowcaseItem extends HTMLElement {
     this.shadowDOM.querySelector("#serving").innerText = this._item.servings;
     this.shadowDOM.querySelector(
       "img"
-    ).src = `${baseRecipeImageUrl}/${this._item.id}-${baseSize}.${this._item.imageType}`;
+    ).src = `${baseRecipeImageUrl}/${this._item.id}-${baseSize}.jpg`;
   }
 }
 
-customElements.define("showcase-item", ShowcaseItem);
+customElements.define("recipe-card", RecipeCard);

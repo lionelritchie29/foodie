@@ -8,6 +8,7 @@
     font-weight: 600;
     font-size: 2rem;
     color: $secondary-light;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   }
 
   h5 {
@@ -15,7 +16,8 @@
     color: $secondary-light;
   }
 
-  showcase-list {
+  showcase-list,
+  search-recipe-list {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
@@ -28,11 +30,25 @@
     }
   }
 
+  search-recipe-list {
+    width: 100%;
+  }
+
   .search-recipe {
-    max-width: 80%;
+    max-width: 90%;
+
+    input {
+      border-top-left-radius: 0.3rem;
+      border-bottom-left-radius: 0.3rem;
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+      font-size: 1rem;
+    }
 
     button {
       border: none;
+      border-top-right-radius: 0.3rem;
+      border-bottom-right-radius: 0.3rem;
       background-color: $primary-mid-green;
       color: white;
     }

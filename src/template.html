@@ -38,7 +38,13 @@
               >
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Link</a>
+              <a class="nav-link" href="#">Recipes</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Meal Generator</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Food Jokes & Trivia</a>
             </li>
           </ul>
         </div>
@@ -99,7 +105,7 @@
 
       <!-- Showcase Recipe Section -->
       <section id="showcase" class="py-5">
-        <h1>Recipes of the Day</h1>
+        <h1>Some Recipes for You</h1>
         <showcase-list></showcase-list>
         <div class="search-recipe mx-auto mt-5">
           <h5>
@@ -108,16 +114,42 @@
           </h5>
           <div class="md-form md-outline d-flex shadow-sm mt-3">
             <input
-              id="form-lg"
-              class="form-control form-control-lg rounded-0"
+              id="search-form"
+              class="form-control form-control-lg"
               type="text"
               placeholder="Search Recipe..."
             />
-            <button class="d-inline px-2 px-md-4 px-lg-5">Search</button>
+            <button
+              class="d-inline px-2 px-md-4 px-lg-5"
+              id="search-recipe-btn"
+            >
+              Search
+            </button>
+          </div>
+          <search-recipe-list></search-recipe-list>
+        </div>
+      </section>
+      <!-- End of Showcase Recipe Section -->
+
+      <!-- Meal Generator Section -->
+      <section id="meal-generator" class="py-5">
+        <div class="container">
+          <h1>Meal Plan Generator</h1>
+          <p>
+            Check out our free meal plan generator, click the button bellow to
+            generate your meal plan for tomorrow.
+          </p>
+          <button>Generate My Meal</button>
+          <meal-list></meal-list>
+          <div class="d-flex justify-content-around mt-5">
+            <span>Calorie</span>
+            <span>Carbohydrates</span>
+            <span>Flat</span>
+            <span>Protein</span>
           </div>
         </div>
       </section>
-      <!-- End of Showcase Recipe Secction -->
+      <!-- End of Meal Generator Section -->
     </main>
     <!-- End of Body -->
 

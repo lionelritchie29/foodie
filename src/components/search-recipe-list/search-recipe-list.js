@@ -1,6 +1,6 @@
 import "../recipe-card/recipe-card.js";
 
-class ShowcaseList extends HTMLElement {
+class SearchRecipeList extends HTMLElement {
   connectedCallback() {
     this.shadowDOM = this.attachShadow({ mode: "open" });
   }
@@ -12,7 +12,9 @@ class ShowcaseList extends HTMLElement {
 
   render() {
     this.shadowDOM.innerHTML = "";
+    console.log(this._items);
     this._items.forEach((item) => {
+      console.log(item);
       const recipeCard = document.createElement("recipe-card");
       recipeCard.item = item;
       this.shadowDOM.appendChild(recipeCard);
@@ -20,4 +22,4 @@ class ShowcaseList extends HTMLElement {
   }
 }
 
-customElements.define("showcase-list", ShowcaseList);
+customElements.define("search-recipe-list", SearchRecipeList);
