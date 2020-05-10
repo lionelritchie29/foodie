@@ -37,6 +37,10 @@
   .search-recipe {
     max-width: 90%;
 
+    span {
+      color: $secondary-light;
+    }
+
     input {
       border-top-left-radius: 0.3rem;
       border-bottom-left-radius: 0.3rem;
@@ -51,6 +55,9 @@
       border-bottom-right-radius: 0.3rem;
       background-color: $primary-mid-green;
       color: white;
+      &:hover {
+        background: lighten($primary-mid-green, 3);
+      }
     }
   }
 }

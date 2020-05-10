@@ -2,10 +2,9 @@ const axios = require("axios");
 const mealListElement = document.querySelector("meal-list");
 
 const getMeal = (apiData) => {
+  const { baseUrl, apiKey } = apiData;
   axios
-    .get(
-      `${apiData.baseUrl}/mealplanner/generate?apiKey=${apiData.apiKey}&timeFrame=day`
-    )
+    .get(`${baseUrl}/mealplanner/generate?apiKey=${apiKey}&timeFrame=day`)
     .then((response) => passInitialResponse(response.data))
     .catch((err) => console.log(err));
 };
@@ -16,10 +15,11 @@ const passInitialResponse = (data) => {
 };
 
 const showNutrients = (nutrient) => {
-  document.querySelector("#calories").innerText = nutrient.calories;
-  document.querySelector("#protein").innerText = nutrient.protein;
-  document.querySelector("#fat").innerText = nutrient.fat;
-  document.querySelector("#carbo").innerText = nutrient.carbohydrates;
+  const { calories, protein, fat, carbohydrates } = nutrient;
+  document.querySelector("#calories").innerText = calories;
+  document.querySelector("#protein").innerText = protein;
+  document.querySelector("#fat").innerText = fat;
+  document.querySelector("#carbo").innerText = carbohydrates;
 };
 
 export default getMeal;

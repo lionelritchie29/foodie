@@ -25,15 +25,14 @@ class RecipeCard extends HTMLElement {
   }
 
   render() {
-    const titleSliced = truncate(this._item.title);
+    const { title, readyInMinutes, servings, id } = this._item;
+    const titleSliced = truncate(title);
     this.shadowDOM.querySelector("h5").innerText = titleSliced;
-    this.shadowDOM.querySelector(
-      "#ready-in-minute"
-    ).innerText = this._item.readyInMinutes;
-    this.shadowDOM.querySelector("#serving").innerText = this._item.servings;
+    this.shadowDOM.querySelector("#ready-in-minute").innerText = readyInMinutes;
+    this.shadowDOM.querySelector("#serving").innerText = servings;
     this.shadowDOM.querySelector(
       "img"
-    ).src = `${baseRecipeImageUrl}/${this._item.id}-${baseSize}.jpg`;
+    ).src = `${baseRecipeImageUrl}/${id}-${baseSize}.jpg`;
   }
 }
 

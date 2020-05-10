@@ -42,6 +42,10 @@
       background: $primary-dark-green;
       color: $secondary-light;
       font-weight: 600;
+
+      &:hover {
+        background: lighten($primary-dark-green, 3);
+      }
     }
   }
 }

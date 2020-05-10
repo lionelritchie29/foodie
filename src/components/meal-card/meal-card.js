@@ -20,15 +20,14 @@ class MealCard extends HTMLElement {
   }
 
   render() {
-    const titleSliced = truncateString(this._item.title);
+    const { title, imageType, readyInMinutes, servings, id } = this._item;
+    const titleSliced = truncateString(title);
     this.shadowDOM.querySelector("h4").innerText = titleSliced;
     this.shadowDOM.querySelector(
       "img"
-    ).src = `${baseRecipeImageUrl}/${this._item.id}-${baseSize}.${this._item.imageType}`;
-    this.shadowDOM.querySelector(
-      "#ready-in-minute"
-    ).innerText = this._item.readyInMinutes;
-    this.shadowDOM.querySelector("#serving").innerText = this._item.servings;
+    ).src = `${baseRecipeImageUrl}/${id}-${baseSize}.${imageType}`;
+    this.shadowDOM.querySelector("#ready-in-minute").innerText = readyInMinutes;
+    this.shadowDOM.querySelector("#serving").innerText = servings;
   }
 }
 

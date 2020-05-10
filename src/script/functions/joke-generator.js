@@ -2,8 +2,9 @@ const axios = require("axios");
 const jokeBtn = document.querySelector("#joke-btn");
 
 const generateJoke = (apiData) => {
+  const { baseUrl, apiKey } = apiData;
   axios
-    .get(`${apiData.baseUrl}/food/jokes/random?apiKey=${apiData.apiKey}`)
+    .get(`${baseUrl}/food/jokes/random?apiKey=${apiKey}`)
     .then((response) => passInitialResponse(response.data))
     .catch((err) => console.log(err));
 };

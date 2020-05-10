@@ -26,6 +26,10 @@
     .btn {
       background-color: $primary-dark-green;
       color: white;
+
+      &:hover {
+        background: lighten($primary-dark-green, 5);
+      }
     }
   }
 }

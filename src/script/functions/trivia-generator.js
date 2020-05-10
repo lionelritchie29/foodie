@@ -1,9 +1,9 @@
 const axios = require("axios");
-const triviaBtn = document.querySelector("#trivia-btn");
 
 const generateTrivia = (apiData) => {
+  const { baseUrl, apiKey } = apiData;
   axios
-    .get(`${apiData.baseUrl}/food/trivia/random?apiKey=${apiData.apiKey}`)
+    .get(`${baseUrl}/food/trivia/random?apiKey=${apiKey}`)
     .then((response) => passInitialResponse(response.data))
     .catch((err) => console.log(err));
 };
