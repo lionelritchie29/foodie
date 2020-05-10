@@ -1,4 +1,4 @@
-import "../recipe-card/recipe-card.js";
+import "../search-recipe-card/search-recipe-card.js";
 
 class SearchRecipeList extends HTMLElement {
   connectedCallback() {
@@ -10,18 +10,12 @@ class SearchRecipeList extends HTMLElement {
     this.render();
   }
 
-  // get recipeData(recipeItem) {
-  // return recipeItem;
-  // }
-
   render() {
     this.shadowDOM.innerHTML = "";
-    console.log(this._items);
     this._items.forEach((item) => {
-      console.log(item);
-      const recipeCard = document.createElement("recipe-card");
-      recipeCard.item = item;
-      this.shadowDOM.appendChild(recipeCard);
+      const searchRecipeCard = document.createElement("search-recipe-card");
+      searchRecipeCard.item = item;
+      this.shadowDOM.appendChild(searchRecipeCard);
     });
   }
 }

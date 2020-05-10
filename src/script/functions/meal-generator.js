@@ -1,8 +1,11 @@
 const axios = require("axios");
 const mealListElement = document.querySelector("meal-list");
+const loaderContainer = document.querySelector("#meal-loader");
 
-const getMeal = (apiData) => {
+const getMeal = (apiData, loader) => {
   const { baseUrl, apiKey } = apiData;
+
+  loaderContainer.innerHTML = loader;
   axios
     .get(`${baseUrl}/mealplanner/generate?apiKey=${apiKey}&timeFrame=day`)
     .then((response) => passInitialResponse(response.data))
@@ -11,6 +14,7 @@ const getMeal = (apiData) => {
 
 const passInitialResponse = (data) => {
   mealListElement.items = data.meals;
+  loaderContainer.innerHTML = "";
   showNutrients(data.nutrients);
 };
 

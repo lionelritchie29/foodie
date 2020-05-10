@@ -1,12 +1,8 @@
 .newsletter {
   padding: 80px 0;
   //   background: $primary-mid-green;
-  background: linear-gradient(
-    to bottom,
-    $primary-mid-green 85%,
-    $primary-dark-green
-  );
-  color: $secondary-light;
+  background: $primary-mid-green;
+  color: white;
 
   .content {
     max-width: 650px;
@@ -40,7 +36,7 @@
       border-top-left-radius: 0;
       border-bottom-left-radius: 0;
       background: $primary-dark-green;
-      color: $secondary-light;
+      color: white;
       font-weight: 600;
 
       &:hover {

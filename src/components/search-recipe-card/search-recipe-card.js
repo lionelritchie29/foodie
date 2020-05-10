@@ -7,7 +7,7 @@ const template = templateFactory(html, scss);
 const baseRecipeImageUrl = "https://spoonacular.com/recipeImages";
 const baseSize = "240x150";
 
-class MealCard extends HTMLElement {
+class RecipeCard extends HTMLElement {
   constructor() {
     super();
     this.shadowDOM = this.attachShadow({ mode: "open" });
@@ -20,27 +20,18 @@ class MealCard extends HTMLElement {
   }
 
   render() {
-    const {
-      title,
-      imageType,
-      readyInMinutes,
-      servings,
-      id,
-      sourceUrl,
-    } = this._item;
+    const { title, readyInMinutes, servings, id } = this._item;
 
-    const titleElement = this.shadowDOM.querySelector("h4");
-    const imgElement = this.shadowDOM.querySelector("img");
+    const titleElement = this.shadowDOM.querySelector("h5");
     const minuteTextElement = this.shadowDOM.querySelector("#ready-in-minute");
     const servingTextElement = this.shadowDOM.querySelector("#serving");
-    const detailElement = this.shadowDOM.querySelector("#detail");
+    const imgElement = this.shadowDOM.querySelector("img");
 
     titleElement.innerText = truncate(title);
-    imgElement.src = `${baseRecipeImageUrl}/${id}-${baseSize}.${imageType}`;
     minuteTextElement.innerText = readyInMinutes;
     servingTextElement.innerText = servings;
-    detailElement.href = sourceUrl;
+    imgElement.src = `${baseRecipeImageUrl}/${id}-${baseSize}.jpg`;
   }
 }
 
-customElements.define("meal-card", MealCard);
+customElements.define("search-recipe-card", RecipeCard);
